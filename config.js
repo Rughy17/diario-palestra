@@ -1,0 +1,15 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww12720\viewh7800\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 // Inserisci qui i dati del tuo progetto Supabase.\
+// La chiave pubblica (publishable/anon) \'e8 pensata per stare nel browser:\
+// i dati sono protetti dalle regole di sicurezza create con schema.sql.\
+window.APP_CONFIG = \{\
+  SUPABASE_URL: "https://XXXX.supabase.co",\
+  SUPABASE_KEY: "sb_publishable_2FOHiO7lySsp9uKdPKr78A_IH7wBQZD"\
+\};\
+}

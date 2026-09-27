@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#18202B">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Palestra">
+  <title>Diario palestra</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="logged-out">
+  <header class="topbar">
+    <span class="brand">Diario palestra</span>
+    <div class="topbar-actions">
+      <button id="sync" class="sync" data-action="sync-info" aria-label="Stato sincronizzazione"><span class="sync-dot"></span></button>
+      <button class="icon-btn light" data-action="nav" data-view="settings" aria-label="Impostazioni">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main"></main>
+
+  <div id="timer" class="timer" hidden>
+    <div class="timer-fill"></div>
+    <div class="timer-row">
+      <button class="timer-btn" data-action="timer-add" data-d="-15" aria-label="Togli 15 secondi">−15</button>
+      <div class="timer-time"><span id="timer-text">0:00</span><small id="timer-sub">recupero</small></div>
+      <button class="timer-btn" data-action="timer-add" data-d="15" aria-label="Aggiungi 15 secondi">+15</button>
+      <button class="timer-btn" data-action="timer-stop" aria-label="Chiudi il timer">✕</button>
+    </div>
+  </div>
+
+  <nav class="tabs" aria-label="Sezioni">
+    <button class="tab" data-action="nav" data-view="workout">Allenamento</button>
+    <button class="tab" data-action="nav" data-view="history">Storico</button>
+    <button class="tab" data-action="nav" data-view="progress">Progressi</button>
+    <button class="tab" data-action="nav" data-view="routines">Schede</button>
+  </nav>
+
+  <div id="sheet" class="sheet" hidden></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
